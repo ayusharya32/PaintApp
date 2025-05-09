@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="0dp"
+    android:elevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent">
+
+    <FrameLayout
+        android:layout_width="75dp"
+        android:layout_height="55dp"
+        android:orientation="vertical"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_color_position"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:text="4"
+            android:elevation="12dp"
+            android:padding="2dp"
+            android:layout_marginHorizontal="2dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:background="@drawable/ic_unchecked_checkbox"
+            android:layout_gravity="top|start"
+            style="@style/ScreenTextColor2"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_color_hex_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#456123"
+            android:elevation="12dp"
+            android:paddingHorizontal="2dp"
+            android:paddingVertical="2dp"
+            android:layout_marginHorizontal="2dp"
+            android:textSize="8sp"
+            android:gravity="center"
+            android:background="@drawable/bg_rounded_edit_text"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="4dp"
+            style="@style/ScreenTextColor2"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_700"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_enabled"
+            android:layout_height="24dp"
+            android:layout_width="24dp"
+            android:src="@drawable/ic_checked_checkbox"
+            android:layout_gravity="top|end"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"/>
+
+    </FrameLayout>
+
+</com.google.android.material.card.MaterialCardView>

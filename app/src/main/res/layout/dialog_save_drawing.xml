@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_rounded_dialog"
+    android:paddingVertical="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_loading"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Are your sure you want to save this drawing?"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        style="@style/ScreenTextColor4"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:paddingVertical="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        style="@style/ButtonStyle2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save_as_draft"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:text="Save as Draft"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/white"
+        android:paddingVertical="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:insetTop="0dp"
+        style="@style/ButtonStyle3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_discard_changes"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:text="Discard Changes"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/white"
+        android:paddingVertical="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:insetTop="0dp"
+        style="@style/ButtonStyle4" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

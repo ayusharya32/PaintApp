@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.appsbyayush.paintspace.customviews.DrawingView
+        android:id="@+id/drawing_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_main_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save_drawing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:iconGravity="textEnd"
+                android:paddingHorizontal="0dp"
+                app:iconPadding="8dp"
+                app:iconSize="15dp"
+                android:layout_marginEnd="8dp"
+                app:icon="@drawable/ic_save"
+                app:cornerRadius="6dp"
+                style="@style/ButtonDrawingViewStyle1"/>
+
+        </FrameLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_text"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_text"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp"
+            android:tooltipText="Add Text"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_image"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_image"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp"
+            android:tooltipText="Add Image"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_brush"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@null"
+            android:src="@drawable/ic_brush_colored"
+            android:layout_marginEnd="8dp"
+            app:maxImageSize="60dp"
+            app:fabCustomSize="35dp"
+            android:tooltipText="Brush Tool"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_selection"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit_and_select"
+            android:layout_marginEnd="8dp"
+            app:maxImageSize="50dp"
+            app:fabCustomSize="35dp"
+            android:tooltipText="Select and Edit"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_brush_menu_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/fab_brush_done"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_toggle_brush_options"
+            style="@style/FabDrawingViewStyle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_visibility_off"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_brush_types"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_brush_simple"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_brush"
+                app:maxImageSize="20dp"
+                app:fabCustomSize="35dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_brush_normal"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_normal"
+                app:maxImageSize="20dp"
+                app:fabCustomSize="35dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_brush_blur"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_blur"
+                app:maxImageSize="20dp"
+                app:fabCustomSize="35dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_brush_outline"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outer"
+                app:maxImageSize="20dp"
+                app:fabCustomSize="35dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_eraser"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_eraser"
+                app:maxImageSize="20dp"
+                app:fabCustomSize="35dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_brush_done"
+        style="@style/FabDrawingViewStyle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        app:fabCustomSize="35dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxImageSize="20dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_brush_menu_2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_brush_menu_1">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_undo"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_undo"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_redo"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_redo"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_color"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            app:backgroundTint="@color/blue_100"
+            android:src="@drawable/ic_color"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp" />
+
+        <com.appsbyayush.paintspace.customviews.VerticalSeekbar
+            android:id="@+id/seek_brush_size"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:paddingVertical="12dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_rounded"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_select_menu_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fab_selection_done">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_toggle_select_options"
+            style="@style/FabDrawingViewStyle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_visibility_off"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_select_menu_1_items"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_bring_forward"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bring_forward"
+                app:maxImageSize="50dp"
+                app:fabCustomSize="35dp"
+                android:tooltipText="Bring Element Forward"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_move_backward"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_move_backward"
+                app:maxImageSize="50dp"
+                app:fabCustomSize="35dp"
+                android:tooltipText="Send Element Backward"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_bring_to_front"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bring_to_front"
+                app:maxImageSize="60dp"
+                app:fabCustomSize="35dp"
+                android:tooltipText="Bring Element to Top"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_move_to_back"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_move_to_back"
+                app:maxImageSize="60dp"
+                app:fabCustomSize="35dp"
+                android:tooltipText="Send Element to Back"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_no_item_selected"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/blue_200"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="6dp"
+        android:text="Tap on any image/text to select"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_selection_done"
+        style="@style/FabDrawingViewStyle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        app:fabCustomSize="35dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxImageSize="20dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_select_menu_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_select_menu_1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="6dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_rounded">
+
+            <com.appsbyayush.paintspace.customviews.VerticalSeekbar
+                android:id="@+id/seek_element_transparency"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:paddingVertical="12dp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_transparency" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_edit_text"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp"
+            android:visibility="visible"
+            android:layout_marginTop="12dp"
+            android:tooltipText="Edit Text"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_lock_item"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_lock"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp"
+            android:tooltipText="Lock Element"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_delete_item"
+            style="@style/FabDrawingViewStyle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp"
+            android:layout_marginTop="20dp"
+            android:tooltipText="Delete Element"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_text_menu_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        style="@style/ScreenBackground1"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/fab_text_done"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_text_color"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_color"
+            app:maxImageSize="20dp"
+            app:fabCustomSize="35dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_text_bold"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_text_bold"
+                app:fabCustomSize="35dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_text_italic"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_text_italic"
+                app:fabCustomSize="35dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_text_underline"
+                style="@style/FabDrawingViewStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_text_underline"
+                app:fabCustomSize="35dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_text_alignment"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_text_align_center"
+            app:maxImageSize="22dp"
+            app:fabCustomSize="35dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_text_background"
+            style="@style/FabDrawingViewStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_text_with_background"
+            app:maxImageSize="25dp"
+            app:fabCustomSize="35dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_text_done"
+        style="@style/FabDrawingViewStyle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        app:fabCustomSize="35dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxImageSize="20dp" />
+
+    <com.appsbyayush.paintspace.customviews.ColorEditText
+        android:id="@+id/cet_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="@null"
+        android:visibility="visible"
+        android:paddingHorizontal="12dp"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:elevation="50dp"
+        android:textCursorDrawable="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_text_menu_1"
+        app:layout_constraintBottom_toTopOf="@id/rv_fonts"/>
+
+    <View
+        android:id="@+id/view_bg_cet_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black_alpha_90"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_text_menu_1"
+        app:layout_constraintBottom_toTopOf="@id/rv_fonts"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_fonts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="visible"
+        android:background="@color/black_alpha_90"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_online_fonts_not_available"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingBottom="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ScreenTextColor2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="No Internet Connection"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ScreenTextColor1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="@string/connect_to_internet_for_fonts"
+            android:textSize="16sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/pointer_circle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:background="@drawable/bg_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

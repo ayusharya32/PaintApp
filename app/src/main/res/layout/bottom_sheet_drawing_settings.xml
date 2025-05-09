@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt_settings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="6dp"
+        android:text="DRAWING SETTINGS"
+        style="@style/ScreenTextColorWithBackground1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_settings">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_rename_drawing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rename"
+            app:icon="@drawable/ic_edit"
+            android:textAlignment="textStart"
+            app:iconSize="20dp"
+            android:textAllCaps="false"
+            android:paddingVertical="12dp"
+            app:cornerRadius="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            style="@style/ButtonStyle1"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_200"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_trash_drawing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Move to Trash"
+            app:icon="@drawable/ic_delete"
+            android:textAlignment="textStart"
+            app:iconSize="20dp"
+            android:textAllCaps="false"
+            android:paddingVertical="12dp"
+            app:cornerRadius="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            style="@style/ButtonStyle1"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_200"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

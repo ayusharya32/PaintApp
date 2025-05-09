@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="18dp"
+    android:background="@drawable/bg_rounded_dialog">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title"
+        style="@style/ScreenTextColor4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Drawing Name"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginVertical="12dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_text_drawing_name"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:hint="Enter name.."
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="8dp"
+        android:inputType="textAutoComplete"
+        style="@style/ScreenEditTextStyle1"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_submit"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        style="@style/ButtonStyle2"
+        android:layout_marginTop="18dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

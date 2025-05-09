@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">PaintSpace</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="start_drawing">You don\'t have any drawings\nClick (+) button below and start drawing</string>
+    <string name="error_loading_images">Error Loading Images\nCheck your internet connection and try again</string>
+    <string name="error_loading_gradients">Error Loading Gradients\nCheck your internet connection and try again</string>
+    <string name="connect_to_internet_for_graphics">Connect to Internet to choose from Online Graphics</string>
+    <string name="connect_to_internet_for_gradients">Connect to Internet to choose from Online Gradients</string>
+    <string name="connect_to_internet_for_fonts">Connect to Internet to choose from Online Fonts</string>
+    <string name="unsaved_drawing_new">If you choose to open new drawing you\'ll lose unsaved progress</string>
+    <string name="unsaved_drawing_old">If you choose to open drawing you\'ll lose unsaved progress</string>
+
+    <string name="sign_in_features">Log in now to enable online sync of drawings so that you don\'t have to worry about losing your data</string>
+    <string name="sign_in_features_2">It looks like you have not signed up with Paintspace yet.\n\nLog in now to enable online sync of drawings so that you don\'t have to worry about losing your data</string>
+    <string name="sign_out_message">All your drawings on this device will be synced and then removed. Are you sure you want to sign out?</string>
+    <string name="privacy_policy">By continuing, you are accepting <u><b>Paintspace\'s Terms of Use and Privacy Policy</b></u></string>
+
+    <string name="storage_permission_needed">To copy drawing to device, allow permission to write on external storage.</string>
+    <string name="storage_permission_needed_after_permanent_denial">To copy drawing to device, allow permission to write on external storage. Tap Settings > Permissions, and turn "Files and media" on.</string>
+
+    <string name="share_message">Hey, I created this cool drawing using PaintSpace App. Be sure to check out this amazing app on PlayStore</string>
+</resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end|center"
+        android:elevation="100dp"
+        android:background="@color/grey_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Skip"
+            app:drawableEndCompat="@drawable/ic_arrow_right"
+            android:paddingHorizontal="12dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingVertical="12dp"
+            style="@style/ScreenTextColor1"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_onboarding"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_bottom_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_app_bar" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/grey_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prev"
+                app:drawableStartCompat="@drawable/ic_arrow_left"
+                android:paddingHorizontal="12dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingVertical="12dp"
+                android:gravity="start|center"
+                style="@style/ScreenTextColor1"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                app:drawableEndCompat="@drawable/ic_arrow_right"
+                android:paddingHorizontal="12dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingVertical="12dp"
+                android:gravity="end|center"
+                style="@style/ScreenTextColor1"
+                android:layout_gravity="end"/>
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

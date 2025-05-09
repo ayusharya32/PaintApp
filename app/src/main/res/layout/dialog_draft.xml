@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_rounded_dialog"
+    android:paddingVertical="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Unsaved Drawing Found"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        style="@style/ScreenTextColor4"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_description"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/unsaved_drawing_new"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        style="@style/ScreenTextColor3"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_open_draft"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Open Unsaved Drawing"
+        android:textAllCaps="false"
+        android:paddingVertical="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        style="@style/ButtonStyle2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_new_drawing"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="New Drawing"
+        android:textAllCaps="false"
+        android:paddingVertical="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
+        android:insetTop="0dp"
+        style="@style/ButtonStyle3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_discard_and_continue"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Discard and Continue"
+        android:textAllCaps="false"
+        android:paddingVertical="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
+        android:insetTop="0dp"
+        style="@style/ButtonStyle4" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

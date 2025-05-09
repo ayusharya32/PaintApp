@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/ScreenBackground1">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_toolbar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            style="@style/ScreenImageStyle3"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_toolbar_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Settings"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:paddingVertical="10dp"
+            style="@style/ScreenTextColor4"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/view"
+        style="@style/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_app_bar" />
+
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="100dp"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/ll_app_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_user"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_google_sign_in"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    app:shapeAppearanceOverlay="@style/circleImageView"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Virat Kohli"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    style="@style/ScreenTextColor2"
+                    android:layout_marginTop="16dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="virat@one8.com"
+                    android:textSize="16sp"
+                    style="@style/ScreenTextColor3" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_not_logged_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginVertical="12dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/sign_in_features"
+                    android:textSize="15sp"
+                    android:paddingHorizontal="16dp"
+                    style="@style/ScreenTextColor3" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sign_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login with Google"
+                    app:icon="@drawable/ic_google_sign_in"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    app:iconGravity="textStart"
+                    app:iconSize="26dp"
+                    android:letterSpacing="0"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="6dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:layout_marginTop="12dp"
+                    style="@style/ButtonStyle2"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_privacy_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="@string/privacy_policy"
+                    style="@style/ScreenTextColor3"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/btn_sign_in"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_sync_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_last_sync_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Last Sync: (1 hour ago) 05/09/12 12:00:00" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sync_drawings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sync Now"
+                    app:icon="@drawable/ic_sync"
+                    android:textAlignment="center"
+                    app:iconGravity="textStart"
+                    app:iconSize="26dp"
+                    android:letterSpacing="0"
+                    android:textAllCaps="false"
+                    android:paddingVertical="16dp"
+                    android:textSize="16sp"
+                    app:cornerRadius="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    style="@style/ButtonStyle2"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_200"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_trash_can"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trash Can"
+                    app:icon="@drawable/ic_delete"
+                    android:textAlignment="center"
+                    app:iconGravity="textStart"
+                    app:iconSize="26dp"
+                    android:letterSpacing="0"
+                    android:textAllCaps="false"
+                    android:paddingVertical="16dp"
+                    android:textSize="16sp"
+                    app:cornerRadius="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    style="@style/ButtonStyle3"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_200"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sign_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Out"
+                    app:icon="@drawable/ic_logout"
+                    android:textAlignment="center"
+                    app:iconGravity="textStart"
+                    app:iconSize="26dp"
+                    android:letterSpacing="0"
+                    android:textAllCaps="false"
+                    android:paddingVertical="16dp"
+                    android:textSize="16sp"
+                    app:cornerRadius="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    style="@style/ButtonStyle3"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_200"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

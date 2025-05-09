@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/grey_500">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_item"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/ic_onboarding_1"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Put your imagination onto a canvas"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:visibility="visible"
+        android:layout_gravity="center|bottom"
+        android:paddingVertical="12dp"
+        app:fontFamily="@font/poppins_medium"
+        style="@style/ScreenTextColor1"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

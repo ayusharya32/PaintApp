@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="6dp"
+    app:strokeColor="@color/grey_200"
+    app:strokeWidth="1px"
+    android:layout_marginStart="6dp"
+    android:layout_marginTop="6dp"
+    app:cardBackgroundColor="@color/grey_200">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_drawing"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_drawing_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_drawing"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_drawing_title"
+                style="@style/ScreenTextColor4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:text="Drawing with Trees and Clouds"
+                android:ellipsize="end"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_drawing_modified"
+                style="@style/ScreenTextColor3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 Sept"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/ScreenTextColor6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap to Restore"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
